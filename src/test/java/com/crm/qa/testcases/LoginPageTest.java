@@ -19,7 +19,7 @@ public class LoginPageTest extends TestBase {
 
     @BeforeMethod
     public void setUp() {
-        initialization();//parentic kanchumenq es methody vory es methodi meji sax exacy kani
+        initialization();//parentic kanchumenq es methody vory es methodi   meji sax exacy kani
         loginPage = new LoginPage(); //LoginPage classi nor object enq haytaratum
 
     }
@@ -27,7 +27,7 @@ public class LoginPageTest extends TestBase {
     @Test(priority = 1)
     public void loginPageTitleTest() {
         String title = loginPage.validateLoginPageTitile();
-        Assert.assertEquals(title, "Free CRM #1 cloud software for any business large or small"); //hamematum enq eji stacvac vernagiry expectedi het
+        Assert.assertEquals(title, "Free CRM #1 cloud software for any business large or small","Login title idn't matched."); //hamematum enq eji stacvac vernagiry expectedi het
     }
 
     @Test(priority = 2)
