@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ContactsPage extends TestBase {
     //variables
-    @FindBy(xpath = "//div[@class='ui header item mb5 light-black']")///
+    @FindBy(xpath = "//div[@class='ui header item mb5 light-black']")
     WebElement contactsLabel;
 
     @FindBy(xpath = "//i[@class='edit icon']")
