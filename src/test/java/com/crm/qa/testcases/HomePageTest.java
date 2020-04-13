@@ -30,7 +30,7 @@ public class HomePageTest extends TestBase {
         homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
     }
 
-    @Test(priority = 1)
+    @Test(priority = 1 /*, enabled = true, groups = { "sanity" }*/)
     public void verifyHomePageTitleTest() {
         String homePageTitle = homePage.verifyHomePageTile();
         Assert.assertEquals(homePageTitle, "Cogmento CRM", "This is for reporting ! /home page/");
