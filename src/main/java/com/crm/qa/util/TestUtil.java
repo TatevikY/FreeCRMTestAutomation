@@ -6,8 +6,8 @@ import com.crm.qa.base.TestBase;
 //instead of this class you can define this variables in properties file and use them /like url, user . password/
 public class TestUtil extends TestBase {
 
-    public static long PAGE_LOAD_TIMEOUT = 20;
-    public static long IMPLICIT_WAIT = 10;
+    public static long PAGE_LOAD_TIMEOUT = 60;
+    public static long IMPLICIT_WAIT = 50;
 
     //switch frame method.use when needed.
     public void switchFrame(){
