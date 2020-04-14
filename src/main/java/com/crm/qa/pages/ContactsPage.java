@@ -4,6 +4,7 @@ import com.crm.qa.base.TestBase;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ContactsPage extends TestBase {
     //variables
@@ -30,6 +31,7 @@ public class ContactsPage extends TestBase {
     }
 
     public ContactsNewPage createNewContact() {
+       // WebDriverWait wait = new WebDriverWait(driver,30);
         createNewContact.click();
         return new ContactsNewPage();
     }

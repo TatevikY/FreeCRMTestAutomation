@@ -1,6 +1,8 @@
 package com.crm.qa.base;
 
 import com.crm.qa.util.TestUtil;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -51,6 +53,8 @@ public class TestBase {
 
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
+     //  driver.get("chrome://settings/clearBrowserData");
+        // driver.findElement(By.xpath("//settings-ui")).sendKeys(Keys.ENTER);
         driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 
