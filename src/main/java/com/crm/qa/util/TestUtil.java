@@ -26,7 +26,6 @@ public class TestUtil extends TestBase {
     public static String TESTDATA_SHEET_PATH = "src/main/java/com/crm/qa/testdata/FreeCrmTestData.xlsx";
 
 
-
     static Workbook book;
     static Sheet sheet;
     static JavascriptExecutor js;
@@ -37,6 +36,7 @@ public class TestUtil extends TestBase {
         driver.switchTo().frame("write the frame name here");
     }
 
+    //method to read data from excel file
     public static Object[][] getTestData(String sheetName) {
         FileInputStream file = null;
         try {
@@ -63,4 +63,12 @@ public class TestUtil extends TestBase {
         }
         return data;
     }
+
+    //take screenshots when exceptions are happening
+    public static void takeScreenshotAtEndOfTest() throws IOException {
+        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        String currentDir = System.getProperty("user.dir");
+        FileUtils.copyFile(scrFile, new File(currentDir + "/screenshots/" + System.currentTimeMillis() + ".png"));
+    }
+
 }
