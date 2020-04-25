@@ -44,13 +44,13 @@ public class TestUtil extends TestBase {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        try {
+        /*try {
             book = WorkbookFactory.create(file);
         } catch (InvalidFormatException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
         sheet = book.getSheet(sheetName);
         Object[][] data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
         // System.out.println(sheet.getLastRowNum() + "--------" +
