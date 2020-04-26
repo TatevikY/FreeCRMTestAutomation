@@ -1,6 +1,7 @@
 package com.crm.qa.testcases;
 
 import com.crm.qa.base.TestBase;
+import org.apache.log4j.Logger;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
 import org.testng.Assert;
@@ -17,6 +18,8 @@ public class LoginPageTest extends TestBase {
         super();//es super keywordy kkanchi parent classi constructorin vory init kani propy vortex set upa arac driver settingsy
     }
 
+    Logger log = Logger.getLogger(LoginPageTest.class);
+
     @BeforeMethod
     public void setUp() {
         initialization();//parentic kanchumenq es methody vory es methodi   meji sax exacy kani
@@ -26,7 +29,9 @@ public class LoginPageTest extends TestBase {
 
     @Test(priority = 1)
     public void loginPageTitleTest() {
+        log.info("executing 1st test");
         String title = loginPage.validateLoginPageTitile();
+        log.info("title is --->" + title);
         Assert.assertEquals(title, "Free CRM #1 cloud software for any business large or small","Login title idn't matched."); //hamematum enq eji stacvac vernagiry expectedi het
     }
 
