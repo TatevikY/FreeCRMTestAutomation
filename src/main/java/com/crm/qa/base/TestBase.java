@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -21,8 +21,9 @@ public class TestBase {
     //initialize the webdriver
     public static WebDriver driver;
     public static Properties prop;
-    public  static EventFiringWebDriver e_driver;
+    public static EventFiringWebDriver e_driver;
     public static WebEventListener eventListener;
+  //  public static Logger log;
 
     //create TestBase class constructor
     public TestBase() {
@@ -60,14 +61,22 @@ public class TestBase {
         e_driver.register(eventListener);
         driver = e_driver;
 
+
+//     log.info("launching chrome broswer");
+
+
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-     //  driver.get("chrome://settings/clearBrowserData");
-        // driver.findElement(By.xpath("//settings-ui")).sendKeys(Keys.ENTER);
+//         driver.get("chrome://settings/clearBrowserData");
+//         driver.findElement(By.xpath("//settings-ui")).sendKeys(Keys.ENTER);
         driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 
         driver.get(prop.getProperty("url"));
+//        log.info("entering application URL");
+//        log.warn("Hey this just a warning message");
+//        log.fatal("hey this is just fatal error message");
+//        log.debug("this is debug message");
 
     }
 
