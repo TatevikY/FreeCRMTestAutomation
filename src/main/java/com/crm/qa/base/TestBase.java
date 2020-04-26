@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-//import org.apache.log4j.Logger;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -23,11 +23,11 @@ public class TestBase {
     public static Properties prop;
     public static EventFiringWebDriver e_driver;
     public static WebEventListener eventListener;
-  //  public static Logger log;
+//    public static Logger log;
 
     //create TestBase class constructor
     public TestBase() {
-
+//        Logger log = Logger.getLogger(TestBase.class);
         //reading properties, and initializing prop variable
         try {
             prop = new Properties();
@@ -62,7 +62,7 @@ public class TestBase {
         driver = e_driver;
 
 
-//     log.info("launching chrome broswer");
+//        log.info("launching chrome broswer");
 
 
         driver.manage().window().maximize();
